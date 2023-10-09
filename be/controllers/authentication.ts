@@ -8,7 +8,12 @@ export const login = async (req: express.Request, res: express.Response) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
-      return res.sendStatus(400);
+      return res.json({
+        isSuccess: false,
+        message: "Email or password are missing",
+        status: res.statusCode,
+        data: "",
+      });
     }
 
     const user = await getUserByEmail(email).select(
