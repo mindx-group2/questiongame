@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+  --background-color: #570af9;
+  --title-color-1: #252525;
+  --title-color-2: #ffffff;
+  --box-color: #ffffff;
+  --box-border-color: #e1d3d3;
+  --submit-btn-color: #817777;
+  --submit-btn-color-hover: #867070;
+}
+
+a {
+  text-decoration: none;
+}
+

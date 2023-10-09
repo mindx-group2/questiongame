@@ -1,0 +1,81 @@
+@import url('../../index.css');
+
+.register-title, 
+.register-box, 
+.register-sign-up_line {
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+}
+
+.register-box {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: var(--box-color);
+  margin: 0 auto;
+}
+
+.register-box_item, 
+.register-box_submit {
+  margin: 2vh;
+}
+
+.register-title {
+  font-weight: 700;
+  font-size: 50px;
+  margin: 10vh 0 5vh 0;
+  color: var(--title-color-2);
+}
+
+.register-box_title {
+  font-weight: 700;
+  font-size: 30px;
+  margin: 3vh 0 1vh 0;
+}
+
+.register-box_item {
+  width: 65%;
+  padding: 2vh;
+  border-radius: 10px;
+  border: 2px solid var(--box-border-color);
+}
+
+.register-box_submit {
+  background-color: var(--submit-btn-color);
+  border: 2px solid var(--box-border-color);
+  border-radius: 10px;
+  padding: 2vh;
+  width: 72%;
+}
+
+.register-google_title {
+  border-bottom: 1px solid black;
+  margin: 0 0 3vh 0;
+  font-size: 15px;
+}
+
+.register-google_button {
+  font-size: 3em;
+}
+
+.register-sign-up_line {
+  display: flex;
+  justify-content: center;
+  gap: 1vw;
+}
+
+.register-sign-up_button {
+  color: white;
+  font-weight: 800;
+}
+
+.register-sign-up_button:hover {
+  color: var(--submit-btn-color);
+  cursor: pointer;
+}
+
+.register-box_submit:hover {
+  background-color: var(--submit-btn-color-hover);
+}
