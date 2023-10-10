@@ -1,33 +1,37 @@
 import express from "express";
 
-import { getUserByEmail, createUser } from "../db/users";
+import { getUserByUserName, getUserByEmail, createUser } from "../db/users";
 import { authentication, random } from "../helpers";
 
 export const login = async (req: express.Request, res: express.Response) => {
   try {
-    const { email, password } = req.body;
+    const { username, password } = req.body;
 
-    if (!email || !password) {
+    if (!username || !password) {
       return res.json({
         isSuccess: false,
         message: "Email or password are missing",
-        status: res.statusCode,
-        data: "",
       });
     }
 
-    const user = await getUserByEmail(email).select(
+    const user = await getUserByUserName(username).select(
       "+authentication.salt +authentication.password"
     );
 
     if (!user) {
-      return res.sendStatus(400);
+      return res.json({
+        isSuccess: false,
+        message: "Incorrect username or password",
+      });
     }
 
     const expectedHash = authentication(user.authentication.salt, password);
 
-    if (user.authentication.password != expectedHash) {
-      return res.sendStatus(403);
+    if (user.authentication.password !== expectedHash) {
+      return res.json({
+        isSuccess: false,
+        message: "Incorrect username or password",
+      });
     }
 
     const salt = random();
@@ -43,10 +47,17 @@ export const login = async (req: express.Request, res: express.Response) => {
       path: "/",
     });
 
-    return res.status(200).json(user).end();
+    return res.status(200).json({
+      isSuccess: true,
+      message: "Login successful",
+      user: user,
+    });
   } catch (error) {
-    console.log(error);
-    return res.sendStatus(400);
+    console.error(error);
+    return res.status(500).json({
+      isSuccess: false,
+      message: "Internal server error",
+    });
   }
 };
 
