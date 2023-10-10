@@ -3,7 +3,7 @@ import { User } from "../../interface/auth";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import { getLogin } from "../../api/authorize";
+import { postLogin } from "../../api/authorize";
 
 const Login = () => {
   const [user, setUser] = useState<User>({ username: "", password: "" });
@@ -21,7 +21,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      let loginResponse = await getLogin(user);
+      let loginResponse = await postLogin(user);
 
       if (loginResponse.data.isSuccess) {
         alert(loginResponse.data.message);

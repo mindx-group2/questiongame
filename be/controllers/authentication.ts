@@ -72,7 +72,10 @@ export const register = async (req: express.Request, res: express.Response) => {
     const existingUser = await getUserByEmail(email);
 
     if (existingUser) {
-      return res.sendStatus(400);
+      return res.status(400).json({
+        isSuccess: false,
+        message: "Account existing"
+      });
     }
 
     const salt = random();
@@ -85,9 +88,16 @@ export const register = async (req: express.Request, res: express.Response) => {
       },
     });
 
-    return res.status(200).json(user).end();
+    return res.status(200).json({
+      isSuccess: true,
+      message: "Register new account successfully!",
+      user: user
+    }).end();
   } catch (error) {
-    console.log(error);
-    return res.sendStatus(400);
+    console.error(error);
+    return res.status(400).json({
+      isSuccess: false,
+      message: "Internal server error",
+    });
   }
 };
