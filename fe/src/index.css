@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
   box-sizing: border-box;
   background-color: var(--background-color);
   font-family: 'Montserrat', sans-serif;
@@ -8,6 +9,8 @@ body {
 
 :root {
   --background-color: #570af9;
+  --background-color-1: #d9d9d9;
+  --background-color-2: #d6a8a8;
   --title-color-1: #252525;
   --title-color-2: #ffffff;
   --box-color: #ffffff;
@@ -15,9 +18,16 @@ body {
   --submit-btn-color: #817777;
   --submit-btn-color-hover: #867070;
   --button-color-1: #2f2d2d;
+  --button-color-2: #9c5757;
+  --button-color-3: #2788be;
+  --question-color: #c84545;
 }
 
 a {
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
 }
 
