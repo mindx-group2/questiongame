@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   background-color: var(--background-color);
   font-family: 'Montserrat', sans-serif;
 }
@@ -13,6 +14,7 @@ body {
   --box-border-color: #e1d3d3;
   --submit-btn-color: #817777;
   --submit-btn-color-hover: #867070;
+  --button-color-1: #2f2d2d;
 }
 
 a {
