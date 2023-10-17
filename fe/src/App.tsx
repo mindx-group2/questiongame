@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/'>
+        <Route path="/">
           <Route index element={<Login />} />
           <Route path='register' element={<Register />} />
           <Route path='join-game' element={<JoinGame />} />
