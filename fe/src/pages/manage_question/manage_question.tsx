@@ -36,7 +36,9 @@ const ManageQuestion = () => {
         </div>
         <div className="manage_question-body-time">
           <div className="manage_question-time-title">Time limit</div>
-          <div className="manage_question-time-remaining"><span></span></div>
+          <div className="manage_question-time-remaining">
+            <div></div>
+          </div>
         </div>
       </div>
     </div>

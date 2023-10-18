@@ -3,6 +3,7 @@
 .manage_question-containter {
   background-color: var(--background-color-1);
   height: 100vh;
+  overflow-y: hidden;
 }
 
 .manage_question-headbox {
@@ -91,4 +92,5 @@
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
+  text-align: center;
 }
